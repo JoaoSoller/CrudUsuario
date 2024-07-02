@@ -1,0 +1,41 @@
+<div style="width: 100%; margin-left: 20px;"> <!-- Div grande envolvendo todos os elementos e alinhada à esquerda -->
+  <form [formGroup]="postUsuarioForm" (ngSubmit)="onSubmit()" style="width: 300px; margin: 20px auto;">
+    <div style="margin-bottom: 10px;">
+      <h1>Cadastro de Usuário</h1>
+      <label for="nome">Nome</label>
+      <input id="nome" formControlName="nome" />
+      <div *ngIf="postUsuarioForm.get('nome')?.invalid && postUsuarioForm.get('nome')?.touched" class="error-message">
+        Nome é obrigatório
+      </div>
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" formControlName="senha" />
+      <div *ngIf="postUsuarioForm.get('senha')?.invalid && postUsuarioForm.get('senha')?.touched" class="error-message">
+        Senha é obrigatória
+      </div>
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      <div *ngIf="postUsuarioForm.get('email')?.invalid && postUsuarioForm.get('email')?.touched" class="error-message">
+        Email inválido
+      </div>
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label for="departamento">Departamento</label>
+      <select id="departamento" formControlName="departamento">
+        <option *ngFor="let departamento of departamentos" [value]="departamento.id">{{departamento.nome}}</option>
+      </select>
+      <div *ngIf="postUsuarioForm.get('departamento')?.invalid && postUsuarioForm.get('departamento')?.touched" class="error-message">
+        Departamento é obrigatório
+      </div>
+    </div>
+
+    <div *ngIf="postUsuarioForm.invalid && (postUsuarioForm.dirty || postUsuarioForm.touched)" class="error-message">
+      Por favor, corrija os erros no formulário antes de enviar.
+    </div>
+
+    <button type="submit">Salvar</button>
+  </form>
+</div>

@@ -1,0 +1,54 @@
+/* Estilo para mensagens de erro */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Estilo para o formulário */
+form {
+  width: 400px; /* Ajuste conforme necessário */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form button {
+  width: calc(100% - 20px); /* Ajuste conforme necessário */
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+form button {
+  background-color: #007BFF; /* Azul para o botão salvar */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0056b3; /* Azul escuro ao passar o mouse */
+}
+
+form button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
